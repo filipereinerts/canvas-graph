@@ -1,0 +1,154 @@
+<html>
+
+    <head>
+
+        <script src="./js/underscore-min.js"></script>
+        <script src="./js/jquery-3.2.1.slim.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
+
+    </head>
+
+    <body>
+
+        <style>
+
+            html, body {
+                overflow: hidden;
+            }
+
+        </style>
+
+        <div style="padding: 10px">
+            <canvas id="myCanvas">
+                Your browser does not support the canvas element.
+            </canvas>
+        </div>
+
+        <div class="filters text-center">
+            
+            <button type="button" class="btn-busca btn btn-info" onclick="nearestNeighbor()">Busca Gulosa</button>
+            <button type="button" class="btn-busca btn btn-success" onclick="trailAndError()">Tentativa e Erro</button>
+            <button type="button" class="btn btn-warning" onclick="clearWindow(true)">Limpar</button>
+
+            <div class="m-2">
+                <button type="button" class="btn btn-dark btn-sm" onclick="padrao6Pontos()">6 pontos</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="padrao5Pontos()">5 pontos</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="padrao18Pontos()">18 pontos</button>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" checked="checked" id="manter-selecao">
+                <label class="form-check-label" for="manter-selecao">
+                    Manter seleção
+                </label>
+            </div>
+
+        </div>
+
+        <div class="container">
+            <span class="message">message</h3>
+        </div>
+
+        <script src="./js/algorithms.js"></script>
+        <script src="./js/canvas-helpers.js"></script>
+        <script src="./js/canvas.js"></script>
+        <script src="./js/events.js"></script>
+        <script src="./js/models.js"></script>
+
+        <script>
+
+            let points = [];
+            let lines = [];
+            let aux = null;
+            
+            let mousePosition;
+
+            function _clone(){
+
+                let p = _.map(points, function(point){
+
+                    return `trigger(jQuery.Event("click", { pageX: ${point.pageX}, pageY: ${point.pageY} }))`;
+
+                });
+
+                let l = _.map(lines, function(line){
+
+                    return `lines.push([points[${_.findIndex(points, line[0])}], points[${_.findIndex(points, line[1])}], ${line[2]}]);`;
+
+                });
+
+                console.log(`$('#myCanvas')\n.${p.join("\n.")};\n\n${l.join("\n")}\ndraw();`);
+
+            }
+
+            function _init(){
+
+                padrao6Pontos();
+
+            }
+
+            function cartesian() {
+
+                return _.filter(_.reduce(arguments, function(a, b) {
+                    return _.flatten(_.map(a, function(x) {
+                        return _.map(b, function(y) {
+                            return x.concat([y]);
+                        });
+                    }), true);
+                }, [[]]), function(sequence){
+                    return _.uniq(sequence).length === points.length;
+                });
+
+            }
+
+            function cartesian2() {
+                var r = [], arg = arguments, max = arg.length - 1;
+                function helper(arr, i) {
+                    for (var j=0, l=arg[i].length; j<l; j++) {
+                        var a = arr.slice(0);
+                        a.push(arg[i][j])
+                        if (i==max) {
+                            if(_.uniq(a).length === points.length){
+                                r.push(a);
+                                console.log(r.length);
+                            }
+                        } else
+                            helper(a, i+1);
+                    }
+                }
+                helper([], 0);
+                return r;
+            };
+
+            function getAllSequencies(){
+
+                let arr = points.map(function(){
+                    return _.range(1, points.length + 1);
+                });
+
+                return cartesian(...arr);
+
+            }
+
+            function getPosition(obj, e){
+
+                if (obj.offsetParent) {
+                    do {
+                        e.pageX -= obj.offsetLeft;
+                        e.pageY -= obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                }
+
+                return e;
+
+            }
+    
+
+        </script>
+
+    </body>
+
+</html>
