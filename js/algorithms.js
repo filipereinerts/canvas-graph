@@ -2,7 +2,7 @@ function trailAndError(){
 
     clearWindow();
 
-    if(points.length > 6){
+    if(points.length > 8){
         showMessage("Melhor não!");
         return; 
     }

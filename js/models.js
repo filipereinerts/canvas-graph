@@ -55,7 +55,7 @@ function padrao18Pontos(){
     lines.push([points[13], points[9], 30]);
     lines.push([points[14], points[9], 19]);
     lines.push([points[14], points[10], 26]);
-    lines.push([points[17], points[10], 36]);
+    lines.push([points[17], points[10], 25]);
     lines.push([points[12], points[11], 27]);
     lines.push([points[15], points[11], 43]);
     lines.push([points[15], points[12], 19]);
@@ -64,7 +64,7 @@ function padrao18Pontos(){
     lines.push([points[16], points[13], 17]);
     lines.push([points[14], points[13], 20]);
     lines.push([points[16], points[14], 18]);
-    lines.push([points[17], points[14], 21]);
+    lines.push([points[17], points[14], 14]);
     lines.push([points[16], points[15], 26]);
     lines.push([points[17], points[16], 15]);
     draw();
@@ -76,12 +76,12 @@ function padrao6Pontos(){
     clearWindow(true);
 
     $('#myCanvas')
-        .trigger(jQuery.Event("click", { pageX: 270, pageY: 200 }))
-        .trigger(jQuery.Event("click", { pageX: 430, pageY: 200 }))
-        .trigger(jQuery.Event("click", { pageX: 500, pageY: 300 }))
-        .trigger(jQuery.Event("click", { pageX: 400, pageY: 400 }))
-        .trigger(jQuery.Event("click", { pageX: 300, pageY: 400 }))
-        .trigger(jQuery.Event("click", { pageX: 200, pageY: 300 }));
+        .trigger(jQuery.Event("click", { pageX: 850, pageY: 250 }))
+        .trigger(jQuery.Event("click", { pageX: 1050, pageY: 250 }))
+        .trigger(jQuery.Event("click", { pageX: 1100, pageY: 350 }))
+        .trigger(jQuery.Event("click", { pageX: 1000, pageY: 450 }))
+        .trigger(jQuery.Event("click", { pageX: 900, pageY: 450 }))
+        .trigger(jQuery.Event("click", { pageX: 800, pageY: 350 }));
     lines.push([points[1], points[0], 1]);
     lines.push([points[2], points[0], 4]);
     lines.push([points[3], points[0], 9]);
@@ -106,11 +106,11 @@ function padrao5Pontos(){
     clearWindow(true);
 
     $('#myCanvas')
-        .trigger(jQuery.Event("click", { pageX: 650, pageY: 300 }))
-        .trigger(jQuery.Event("click", { pageX: 800, pageY: 200 }))
-        .trigger(jQuery.Event("click", { pageX: 950, pageY: 300 }))
-        .trigger(jQuery.Event("click", { pageX: 700, pageY: 400 }))
-        .trigger(jQuery.Event("click", { pageX: 900, pageY: 400 }));
+    .trigger(jQuery.Event("click", { pageX: 900, pageY: 325 }))
+    .trigger(jQuery.Event("click", { pageX: 1000, pageY: 250 }))
+    .trigger(jQuery.Event("click", { pageX: 1100, pageY: 325 }))
+    .trigger(jQuery.Event("click", { pageX: 950, pageY: 440 }))
+    .trigger(jQuery.Event("click", { pageX: 1050, pageY: 440 }));
 
     lines.push([points[1], points[0], 2]);
     lines.push([points[4], points[0], 6]);
@@ -120,6 +120,91 @@ function padrao5Pontos(){
     lines.push([points[4], points[2], 3]);
     lines.push([points[3], points[2], 7]);
     lines.push([points[3], points[4], 3]);
+    lines.push([points[0], points[2], 10]);
+    draw();
+
+}
+
+function padrao7Pontos(){
+
+    clearWindow(true);
+
+    $('#myCanvas')
+    .trigger(jQuery.Event("click", { pageX: 780,    pageY: 290 }))
+    .trigger(jQuery.Event("click", { pageX: 1100,   pageY: 290 }))
+    .trigger(jQuery.Event("click", { pageX: 1100,   pageY: 420 }))
+    .trigger(jQuery.Event("click", { pageX: 990,    pageY: 520 }))
+    .trigger(jQuery.Event("click", { pageX: 890,    pageY: 520 }))
+    .trigger(jQuery.Event("click", { pageX: 780,    pageY: 420 }))
+    .trigger(jQuery.Event("click", { pageX: 940,    pageY: 190 }));
+
+    lines.push([points[1], points[0], 1]);
+    lines.push([points[2], points[0], 4]);
+    lines.push([points[3], points[0], 9]);
+    lines.push([points[4], points[0], 8]);
+    lines.push([points[5], points[0], 2]);
+    lines.push([points[2], points[1], 5]);
+    lines.push([points[3], points[1], 5]);
+    lines.push([points[4], points[1], 7]);
+    lines.push([points[5], points[1], 6]);
+    lines.push([points[3], points[2], 10]);
+    lines.push([points[4], points[2], 7]);
+    lines.push([points[5], points[2], 4]);
+    lines.push([points[4], points[3], 1]);
+    lines.push([points[5], points[3], 7]);
+    lines.push([points[5], points[4], 3]);
+    lines.push([points[0], points[6], 5]);
+    lines.push([points[1], points[6], 6]);
+    lines.push([points[2], points[6], 7]);
+    lines.push([points[3], points[6], 8]);
+    lines.push([points[4], points[6], 9]);
+    lines.push([points[5], points[6], 10]);
+    draw();
+
+}
+
+function padrao8Pontos(){
+
+    clearWindow(true);
+
+    $('#myCanvas')
+    .trigger(jQuery.Event("click", { pageX: 780,    pageY: 290 }))
+    .trigger(jQuery.Event("click", { pageX: 1100,   pageY: 290 }))
+    .trigger(jQuery.Event("click", { pageX: 1100,   pageY: 420 }))
+    .trigger(jQuery.Event("click", { pageX: 990,    pageY: 520 }))
+    .trigger(jQuery.Event("click", { pageX: 890,    pageY: 520 }))
+    .trigger(jQuery.Event("click", { pageX: 780,    pageY: 420 }))
+    .trigger(jQuery.Event("click", { pageX: 990,    pageY: 190 }))
+    .trigger(jQuery.Event("click", { pageX: 890,    pageY: 190 }));
+    
+    lines.push([points[1], points[0], 1]);
+    lines.push([points[2], points[0], 4]);
+    lines.push([points[3], points[0], 9]);
+    lines.push([points[4], points[0], 8]);
+    lines.push([points[5], points[0], 2]);
+    lines.push([points[2], points[1], 5]);
+    lines.push([points[3], points[1], 5]);
+    lines.push([points[4], points[1], 7]);
+    lines.push([points[5], points[1], 6]);
+    lines.push([points[3], points[2], 10]);
+    lines.push([points[4], points[2], 7]);
+    lines.push([points[5], points[2], 4]);
+    lines.push([points[4], points[3], 1]);
+    lines.push([points[5], points[3], 7]);
+    lines.push([points[5], points[4], 3]);
+    lines.push([points[0], points[6], 5]);
+    lines.push([points[1], points[6], 6]);
+    lines.push([points[2], points[6], 7]);
+    lines.push([points[3], points[6], 8]);
+    lines.push([points[4], points[6], 9]);
+    lines.push([points[5], points[6], 10]);
+    lines.push([points[6], points[7], 4]);
+    lines.push([points[1], points[7], 5]);
+    lines.push([points[2], points[7], 6]);
+    lines.push([points[7], points[3], 7]);
+    lines.push([points[4], points[7], 8]);
+    lines.push([points[5], points[7], 7]);
+    lines.push([points[0], points[7], 6]);
     draw();
 
 }

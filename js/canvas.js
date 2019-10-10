@@ -1,5 +1,5 @@
 const POINT_COLOR = 'darkgreen';
-const POINT_COLOR_SELECTED = 'darkcyan';
+const POINT_COLOR_SELECTED = 'blue';
 const POINT_TEXT_COLOR = '#ddd';
 
 const LINE_COLOR = '#ababab';

@@ -29,13 +29,15 @@
 
         <div class="filters text-center">
             
-            <button type="button" class="btn-busca btn btn-info" onclick="nearestNeighbor()">Busca Gulosa</button>
+            <button type="button" class="btn-busca btn btn-info" onclick="nearestNeighbor()">Vizinho mais Próximo</button>
             <button type="button" class="btn-busca btn btn-success" onclick="trailAndError()">Tentativa e Erro</button>
             <button type="button" class="btn btn-warning" onclick="clearWindow(true)">Limpar</button>
 
             <div class="m-2">
-                <button type="button" class="btn btn-dark btn-sm" onclick="padrao6Pontos()">6 pontos</button>
                 <button type="button" class="btn btn-dark btn-sm" onclick="padrao5Pontos()">5 pontos</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="padrao6Pontos()">6 pontos</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="padrao7Pontos()">7 pontos</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="padrao8Pontos()">8 pontos</button>
                 <button type="button" class="btn btn-dark btn-sm" onclick="padrao18Pontos()">18 pontos</button>
             </div>
 
@@ -86,7 +88,7 @@
 
             function _init(){
 
-                padrao6Pontos();
+                padrao5Pontos();
 
             }
 
@@ -113,7 +115,6 @@
                         if (i==max) {
                             if(_.uniq(a).length === points.length){
                                 r.push(a);
-                                console.log(r.length);
                             }
                         } else
                             helper(a, i+1);
@@ -129,7 +130,7 @@
                     return _.range(1, points.length + 1);
                 });
 
-                return cartesian(...arr);
+                return  cartesian2(...arr);
 
             }
 
